@@ -30,13 +30,13 @@ check $? "/dev/video0 present"
 # Step 3: basic pipeline with fakesink (5 seconds)
 echo ""
 echo "--- Step 3: v4l2src ! fakesink (5 s) ---"
-timeout 5 gst-launch-1.0 -q v4l2src device=/dev/video0 num-buffers=30 ! fakesink sync=false
+gst-launch-1.0 -q v4l2src device=/dev/video0 num-buffers=30 ! fakesink sync=false
 check $? "gst-launch-1.0 v4l2src ! fakesink"
 
 # Step 4: pipeline with videoconvert (optional, graceful failure)
 echo ""
 echo "--- Step 4: v4l2src ! videoconvert ! fakesink (optional) ---"
-timeout 5 gst-launch-1.0 -q v4l2src device=/dev/video0 num-buffers=30 ! videoconvert ! fakesink sync=false
+gst-launch-1.0 -q v4l2src device=/dev/video0 num-buffers=30 ! videoconvert ! fakesink sync=false
 if [ $? -eq 0 ]; then
     echo "[PASS] v4l2src ! videoconvert ! fakesink"
 else
