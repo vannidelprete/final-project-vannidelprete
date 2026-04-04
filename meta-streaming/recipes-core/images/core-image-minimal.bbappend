@@ -10,3 +10,6 @@ IMAGE_INSTALL:append = " \
 
 # Issue #8: RTSP server library for streaming pipeline
 IMAGE_INSTALL:append = " gstreamer1.0-rtsp-server"
+
+# Issue #9: pipeline verification script
+IMAGE_INSTALL:append = " pipeline-test"
