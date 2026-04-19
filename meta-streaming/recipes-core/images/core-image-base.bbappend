@@ -13,3 +13,6 @@ IMAGE_INSTALL:append = " gstreamer1.0-rtsp-server"
 
 # Issue #9: pipeline verification script
 IMAGE_INSTALL:append = " pipeline-test"
+
+# Issue #13: RTSP server application and x264 encoder plugin
+IMAGE_INSTALL:append = " gstreamer1.0-plugins-ugly gstreamer1.0-plugins-ugly-x264 x264 rtsp-stream"
